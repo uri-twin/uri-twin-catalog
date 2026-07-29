@@ -18,7 +18,7 @@ test("Plesk resolves to its reviewed Git baseline and supported schema", () => {
     ref: "main",
     path: "baseline/plesk-surface.v1.json",
     schema: "uri-twin.baseline/v1",
-    latest_tag: "v0.2.3",
+    latest_tag: "v0.2.4",
   });
 });
 

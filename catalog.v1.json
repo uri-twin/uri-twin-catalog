@@ -28,7 +28,7 @@
       "repository": "https://github.com/uri-twin/uri-twin-plesk.git",
       "default_ref": "main",
       "package": "@uri-twin/plesk",
-      "latest_tag": "v0.2.3",
+      "latest_tag": "v0.2.4",
       "baseline": {
         "path": "baseline/plesk-surface.v1.json",
         "schema": "uri-twin.baseline/v1"
@@ -38,6 +38,7 @@
         "uri-twin.attestation/v1",
         "uri-twin.baseline/v1",
         "uri-twin.map/v1",
+        "uri-twin.change-proposal/v1",
         "uri-twin.signer-policy/v1"
       ]
     }
