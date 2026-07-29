@@ -1,6 +1,6 @@
 {
   "name": "@uri-twin/catalog",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Machine-readable registry of reviewed URI Twin repositories and baselines",
   "type": "module",
   "exports": {

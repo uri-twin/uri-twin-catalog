@@ -28,6 +28,14 @@ try {
     if (entry.baseline) {
       const baseline = JSON.parse(await readFile(join(checkout, entry.baseline.path), "utf8"));
       assert.equal(baseline.schema, entry.baseline.schema, `${entry.id}: baseline schema`);
+      if (entry.supported_schemas.includes("uri-twin.attestation/v1")) {
+        const verified = spawnSync("node", ["scripts/verify-attestation.mjs"], {
+          cwd: checkout,
+          encoding: "utf8",
+          env: process.env,
+        });
+        if (verified.status !== 0) throw new Error(`catalog_attestation_invalid:${entry.id}`);
+      }
     }
   }
   process.stdout.write(`${JSON.stringify({ok: true, repositories: catalog.repositories.length, source: localRoot ? "local" : "git"}, null, 2)}\n`);
