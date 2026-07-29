@@ -1,0 +1,19 @@
+{
+  "name": "@uri-twin/catalog",
+  "version": "0.1.0",
+  "description": "Machine-readable registry of reviewed URI Twin repositories and baselines",
+  "type": "module",
+  "exports": {
+    ".": "./src/catalog.mjs",
+    "./catalog": "./catalog.v1.json",
+    "./schema": "./schemas/catalog.v1.schema.json"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.mjs",
+    "verify": "node scripts/verify-catalog.mjs"
+  },
+  "license": "Apache-2.0",
+  "engines": {
+    "node": ">=20"
+  }
+}

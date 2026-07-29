@@ -1,0 +1,43 @@
+{
+  "schema": "uri-twin.catalog/v1",
+  "version": 1,
+  "organization": {
+    "id": "uri-twin",
+    "url": "https://github.com/uri-twin"
+  },
+  "repositories": [
+    {
+      "id": "uri-twin-core",
+      "family": "core",
+      "role": "contracts",
+      "repository": "https://github.com/uri-twin/uri-twin-core.git",
+      "default_ref": "main",
+      "package": "@uri-twin/core",
+      "latest_tag": "v0.2.3",
+      "baseline": null,
+      "supported_schemas": [
+        "subactor.twin-fact/v1",
+        "uri-twin.map/v1",
+        "uri-twin.capability/v1"
+      ]
+    },
+    {
+      "id": "uri-twin-plesk",
+      "family": "plesk",
+      "role": "platform-twin",
+      "repository": "https://github.com/uri-twin/uri-twin-plesk.git",
+      "default_ref": "main",
+      "package": "@uri-twin/plesk",
+      "latest_tag": "v0.2.2",
+      "baseline": {
+        "path": "baseline/plesk-surface.v1.json",
+        "schema": "uri-twin.baseline/v1"
+      },
+      "supported_schemas": [
+        "subactor.twin-fact/v1",
+        "uri-twin.baseline/v1",
+        "uri-twin.map/v1"
+      ]
+    }
+  ]
+}
