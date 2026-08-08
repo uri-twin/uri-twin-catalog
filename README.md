@@ -26,6 +26,7 @@ the package name, version tag and baseline schema agree with the index.
 | --- | --- | --- |
 | `core` | `uri-twin-core` | contracts only |
 | `plesk` | `uri-twin-plesk` | `baseline/plesk-surface.v1.json` |
+| `forge` | `uri-twin-forge` | `baseline/forge-surface.v1.json` |
 
 Adding a family requires a real repository, connector integration and a green
 manifest-route conformance test. Discovery alone is not sufficient.

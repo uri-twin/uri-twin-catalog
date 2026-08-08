@@ -8,8 +8,19 @@ const catalog = JSON.parse(await readFile(new URL("../catalog.v1.json", import.m
 
 test("catalog indexes each URI Twin family once", () => {
   const validated = validateCatalog(catalog);
-  assert.deepEqual(validated.repositories.map((entry) => entry.family), ["core", "plesk"]);
+  assert.deepEqual(validated.repositories.map((entry) => entry.family), ["core", "plesk", "forge"]);
   assert.equal(familyEntry(validated, "missing"), null);
+});
+
+test("Forge resolves to its reviewed Git baseline and account-twin schema", () => {
+  assert.deepEqual(baselineSource(catalog, "forge"), {
+    repository: "https://github.com/uri-twin/uri-twin-forge.git",
+    ref: "main",
+    path: "baseline/forge-surface.v1.json",
+    schema: "uri-twin.baseline/v1",
+    latest_tag: "v0.1.0",
+  });
+  assert.ok(familyEntry(catalog, "forge").supported_schemas.includes("urirun.forge-account-twin/v1"));
 });
 
 test("Plesk resolves to its reviewed Git baseline and supported schema", () => {

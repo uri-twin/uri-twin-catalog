@@ -41,6 +41,25 @@
         "uri-twin.change-proposal/v1",
         "uri-twin.signer-policy/v1"
       ]
+    },
+    {
+      "id": "uri-twin-forge",
+      "family": "forge",
+      "role": "platform-twin",
+      "repository": "https://github.com/uri-twin/uri-twin-forge.git",
+      "default_ref": "main",
+      "package": "@uri-twin/forge",
+      "latest_tag": "v0.1.0",
+      "baseline": {
+        "path": "baseline/forge-surface.v1.json",
+        "schema": "uri-twin.baseline/v1"
+      },
+      "supported_schemas": [
+        "subactor.twin-fact/v1",
+        "urirun.forge-account-twin/v1",
+        "uri-twin.baseline/v1",
+        "uri-twin.map/v1"
+      ]
     }
   ]
 }
